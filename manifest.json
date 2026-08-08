@@ -1,7 +1,8 @@
 {
   "name": "DORIC — Ευρετήριο",
   "short_name": "DORIC",
-  "start_url": "./index.html",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#F5F5F0",
   "theme_color": "#1F3A5F",
