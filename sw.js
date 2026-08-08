@@ -1,4 +1,4 @@
-const C='doric-v3';
+const C='doric-v4';
 const FILES=['./','./index.html','./manifest.json','./icon-180.png','./icon-512.png'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(C).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()));
