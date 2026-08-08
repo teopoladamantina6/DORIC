@@ -23,8 +23,8 @@ input,select,textarea{font-family:inherit;font-size:16px;width:100%;padding:11px
   border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--navy2);outline-offset:-1px}
 textarea{min-height:76px;resize:vertical}
+input[type=file]{padding:9px;font-size:14px}
 
-/* header */
 .hdr{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;
   padding:calc(env(safe-area-inset-top) + 12px) 16px 12px;
   display:flex;align-items:center;gap:10px;box-shadow:0 1px 6px rgba(0,0,0,.18)}
@@ -36,31 +36,32 @@ textarea{min-height:76px;resize:vertical}
 
 .wrap{padding:14px 14px 20px;max-width:760px;margin:0 auto}
 
-/* tabbar */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;
-  border-top:1px solid var(--line);display:flex;
-  padding-bottom:env(safe-area-inset-bottom)}
+  border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
 .tabbar button{flex:1;padding:9px 4px 8px;color:var(--muted);font-size:11px;
   display:flex;flex-direction:column;align-items:center;gap:3px;font-weight:600;letter-spacing:.04em}
 .tabbar button .ic{font-size:19px;line-height:1}
 .tabbar button.on{color:var(--navy)}
 
-/* cards */
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:14px;margin-bottom:11px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:11px}
 .rowbtw{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .name{font-weight:700;font-size:17px;line-height:1.25}
 .sub{color:var(--muted);font-size:13px;margin-top:3px}
 .chev{color:var(--muted);font-size:20px;flex:0 0 auto}
 
-/* region header */
-.rgn{display:flex;align-items:center;gap:9px;margin:16px 0 9px}
-.rgn .bar{width:4px;height:19px;background:var(--olive);border-radius:2px}
-.rgn h2{font-size:13px;font-weight:800;letter-spacing:.13em;color:var(--navy)}
-.rgn .cnt{color:var(--muted);font-size:12px}
-.rgn .del{margin-left:auto;color:var(--muted);font-size:12px;padding:5px 8px}
+/* region card (drill-down) */
+.rcard{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--olive);
+  border-radius:14px;padding:16px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.rcard .rn{font-weight:800;font-size:17px;letter-spacing:.02em}
+.rcard .rs{color:var(--muted);font-size:13px;margin-top:2px}
+.rcard .num{background:#EFF1E6;color:#4A5220;font-weight:800;border-radius:9px;
+  padding:6px 11px;font-size:15px;flex:0 0 auto}
 
-/* buttons */
+.crumb{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.crumb button{background:#fff;border:1px solid var(--line);border-radius:9px;
+  padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy)}
+.crumb .here{font-weight:800;color:var(--navy);font-size:15px;letter-spacing:.02em}
+
 .btn{background:var(--navy);color:#fff;border-radius:11px;padding:13px 16px;
   font-weight:700;width:100%;text-align:center;letter-spacing:.02em}
 .btn.olive{background:var(--olive-d)}
@@ -70,14 +71,13 @@ textarea{min-height:76px;resize:vertical}
 .btnrow{display:flex;gap:9px;margin-top:12px}
 .btnrow .btn{flex:1}
 
-/* chips */
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
 .chip{background:#EFF1E6;border:1px solid #DDE0CC;color:#4A5220;border-radius:8px;
   padding:4px 9px;font-size:12px;font-weight:700}
 .chip.blue{background:#EAEFF6;border-color:#D3DEEC;color:var(--navy)}
 .chip.bio{background:#E8F3E9;border-color:#CBE3CD;color:var(--ok)}
+.chip.pdf{background:#FBEEE6;border-color:#EFD9C8;color:#8A4B2F}
 
-/* oil / deal item */
 .item{border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:10px;background:#FCFCF9}
 .item .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .item .tt{font-weight:700;font-size:15px}
@@ -87,10 +87,8 @@ textarea{min-height:76px;resize:vertical}
 .mini .v{font-size:16px;font-weight:700;margin-top:2px}
 .mini .v.ok{color:var(--ok)} .mini .v.warn{color:var(--warn)} .mini .v.bad{color:var(--bad)}
 
-/* form */
 .f{margin-bottom:11px}
-.f label{display:block;font-size:12px;font-weight:700;color:var(--muted);
-  letter-spacing:.07em;margin-bottom:5px}
+.f label{display:block;font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.07em;margin-bottom:5px}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hint{font-size:11px;color:var(--muted);margin-top:4px}
 .sect{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--navy);
@@ -99,14 +97,11 @@ textarea{min-height:76px;resize:vertical}
 .chkrow input{width:22px;height:22px;flex:0 0 22px}
 .chkrow span{font-size:15px;font-weight:600}
 
-/* empty */
 .empty{text-align:center;padding:42px 18px;color:var(--muted)}
 .empty .big{font-size:34px;margin-bottom:10px}
 .empty p{margin:0 0 16px;font-size:14px;line-height:1.5}
 
-/* modal */
-.sheet{position:fixed;inset:0;z-index:60;background:rgba(20,24,30,.45);
-  display:flex;align-items:flex-end}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(20,24,30,.45);display:flex;align-items:flex-end}
 .sheet .in{background:var(--bg);width:100%;max-height:93vh;overflow-y:auto;
   border-radius:18px 18px 0 0;padding:16px 14px calc(env(safe-area-inset-bottom) + 20px);
   -webkit-overflow-scrolling:touch}
@@ -116,8 +111,10 @@ textarea{min-height:76px;resize:vertical}
 
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:80;
   background:var(--navy);color:#fff;padding:11px 18px;border-radius:11px;font-size:14px;
-  font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+  font-weight:600;box-shadow:0 4px 14px rgba(0,0,0,.25);max-width:88%;text-align:center}
 .load{text-align:center;padding:50px;color:var(--muted)}
+.filt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:11px}
+.filt .more{color:var(--navy);font-weight:700;font-size:14px;padding:8px 0}
 </style>
 
 <div class="hdr">
@@ -130,10 +127,7 @@ textarea{min-height:76px;resize:vertical}
     <path d="M302 202l1.5 186M318 202v186M334 202l-1.5 186" stroke="#1F3A5F" stroke-width="7"/>
     <rect x="276" y="398" width="84" height="14" rx="2" fill="#A9A233"/>
   </g></svg>
-  <div>
-    <div class="t" id="hT">DORIC</div>
-    <div class="s" id="hS">ΕΥΡΕΤΗΡΙΟ</div>
-  </div>
+  <div><div class="t" id="hT">DORIC</div><div class="s" id="hS">ΕΥΡΕΤΗΡΙΟ</div></div>
   <div class="sp"></div>
   <button class="iconbtn" onclick="openBackup()">Αντίγραφο</button>
 </div>
@@ -149,14 +143,14 @@ textarea{min-height:76px;resize:vertical}
 <script>
 const KEY='doric-index-v1';
 let D={pRegions:[],producers:[],cRegions:[],clients:[]};
-let view='prod', openId=null, openKind=null, ready=false;
+let view='prod', nav=null, ready=false;   // nav = {kind:'pregion'|'producer'|'cregion'|'client', id}
 
-/* ---------- storage ---------- */
+/* ================= ΑΠΟΘΗΚΕΥΣΗ ΕΓΓΡΑΦΩΝ ================= */
 function load(){
   try{
     const v=localStorage.getItem(KEY);
     if(v) D=Object.assign({pRegions:[],producers:[],cRegions:[],clients:[]},JSON.parse(v));
-  }catch(e){ /* πρώτη χρήση */ }
+  }catch(e){}
   ready=true; render();
 }
 let saveTimer=null;
@@ -168,38 +162,87 @@ function save(msg){
   },120);
   if(msg) toast(msg);
 }
+
+/* ================= ΑΠΟΘΗΚΕΥΣΗ ΑΡΧΕΙΩΝ (PDF) ================= */
+let _db=null, filesOK=(typeof indexedDB!=='undefined');
+function db(){
+  return new Promise((res,rej)=>{
+    if(_db) return res(_db);
+    try{
+      const q=indexedDB.open('doric-files',1);
+      q.onupgradeneeded=()=>{ if(!q.result.objectStoreNames.contains('f')) q.result.createObjectStore('f'); };
+      q.onsuccess=()=>{ _db=q.result; res(_db); };
+      q.onerror=()=>rej(q.error);
+    }catch(e){ rej(e); }
+  });
+}
+async function putFile(id,rec){
+  const d=await db();
+  return new Promise((res,rej)=>{ const t=d.transaction('f','readwrite');
+    t.objectStore('f').put(rec,id); t.oncomplete=()=>res(); t.onerror=()=>rej(t.error); });
+}
+async function getFile(id){
+  const d=await db();
+  return new Promise((res,rej)=>{ const t=d.transaction('f','readonly');
+    const r=t.objectStore('f').get(id); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); });
+}
+async function dropFile(id){
+  if(!id) return;
+  try{ const d=await db();
+    await new Promise(res=>{ const t=d.transaction('f','readwrite');
+      t.objectStore('f').delete(id); t.oncomplete=res; t.onerror=res; });
+  }catch(e){}
+}
+async function showFile(id,name){
+  try{
+    const rec=await getFile(id);
+    if(!rec){ toast('Το αρχείο δεν βρέθηκε'); return; }
+    const url=URL.createObjectURL(rec.blob);
+    const a=document.createElement('a');
+    a.href=url; a.download=name||rec.name||'analysis.pdf'; a.target='_blank';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),4000);
+  }catch(e){ toast('Δεν άνοιξε το αρχείο'); }
+}
+
 function toast(t){
   const d=document.createElement('div'); d.className='toast'; d.textContent=t;
-  document.body.appendChild(d); setTimeout(()=>d.remove(),1900);
+  document.body.appendChild(d); setTimeout(()=>d.remove(),2100);
 }
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
 const esc=s=>(s==null?'':String(s)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num=v=>{const n=parseFloat(String(v).replace(',','.'));return isNaN(n)?null:n;};
 
-/* ---------- custom confirm (τα native alert/confirm μπλοκάρονται εδώ) ---------- */
+/* ---------- custom confirm ---------- */
 function ask(msg,onYes){
   const w=document.createElement('div'); w.className='sheet';
   w.innerHTML=`<div class="in"><h3 style="margin-top:8px">${esc(msg)}</h3>
-    <div class="btnrow">
-      <button class="btn ghost" id="no">Άκυρο</button>
-      <button class="btn danger" id="yes">Διαγραφή</button></div></div>`;
+    <div class="btnrow"><button class="btn ghost" id="no">Άκυρο</button>
+    <button class="btn danger" id="yes">Διαγραφή</button></div></div>`;
   w.addEventListener('click',e=>{ if(e.target===w) w.remove(); });
   document.body.appendChild(w);
   w.querySelector('#no').onclick=()=>w.remove();
   w.querySelector('#yes').onclick=()=>{ w.remove(); onYes(); };
 }
 
-/* ---------- nav ---------- */
-function go(v){ view=v; openId=null; openKind=null; render(); }
-function openRec(kind,id){ openKind=kind; openId=id; render(); window.scrollTo(0,0); }
+/* ---------- πλοήγηση ---------- */
+function go(v){ view=v; nav=null; render(); window.scrollTo(0,0); }
+function openRec(kind,id){ nav={kind,id}; render(); window.scrollTo(0,0); }
+function back(){
+  if(!nav) return;
+  if(nav.kind==='producer'){ const p=D.producers.find(x=>x.id===nav.id); nav={kind:'pregion',id:p?p.region:null}; }
+  else if(nav.kind==='client'){ const c=D.clients.find(x=>x.id===nav.id); nav={kind:'cregion',id:c?c.region:null}; }
+  else nav=null;
+  render(); window.scrollTo(0,0);
+}
 
-/* ---------- quality colour ---------- */
-function acidCls(v){ const n=num(v); if(n===null)return''; return n<=0.4?'ok':(n<=0.8?'warn':'bad'); }
-function peroxCls(v){ const n=num(v); if(n===null)return''; return n<=12?'ok':(n<=20?'warn':'bad'); }
-function k270Cls(v){ const n=num(v); if(n===null)return''; return n<=0.18?'ok':(n<=0.22?'warn':'bad'); }
-function polyCls(v){ const n=num(v); if(n===null)return''; return n>=250?'ok':''; }
+/* ---------- χρώματα ποιότητας ---------- */
+function acidCls(v){const n=num(v);return n===null?'':(n<=0.4?'ok':(n<=0.8?'warn':'bad'));}
+function peroxCls(v){const n=num(v);return n===null?'':(n<=12?'ok':(n<=20?'warn':'bad'));}
+function k270Cls(v){const n=num(v);return n===null?'':(n<=0.18?'ok':(n<=0.22?'warn':'bad'));}
+function polyCls(v){const n=num(v);return n===null?'':(n>=250?'ok':'');}
 
-/* ---------- render ---------- */
+/* ================= RENDER ================= */
 function render(){
   const el=document.getElementById('app');
   if(!ready){ el.innerHTML='<div class="load">Φόρτωση…</div>'; return; }
@@ -207,53 +250,75 @@ function render(){
   document.getElementById('tb-cli').className  = view==='cli'?'on':'';
   document.getElementById('tb-find').className = view==='find'?'on':'';
 
-  if(openKind==='producer') return el.innerHTML=producerPage(openId);
-  if(openKind==='client')   return el.innerHTML=clientPage(openId);
-  if(view==='prod') el.innerHTML=prodList();
-  else if(view==='cli') el.innerHTML=cliList();
-  else el.innerHTML=findPage();
+  if(nav){
+    if(nav.kind==='pregion') el.innerHTML=pRegionPage(nav.id);
+    else if(nav.kind==='producer') el.innerHTML=producerPage(nav.id);
+    else if(nav.kind==='cregion') el.innerHTML=cRegionPage(nav.id);
+    else if(nav.kind==='client') el.innerHTML=clientPage(nav.id);
+    setHdr(); return;
+  }
+  if(view==='prod') el.innerHTML=prodRegions();
+  else if(view==='cli') el.innerHTML=cliRegions();
+  else { el.innerHTML=findPage(); fillFind(); }
   setHdr();
 }
 function setHdr(){
-  const m={prod:['DORIC','ΠΑΡΑΓΩΓΟΙ'],cli:['DORIC','ΠΕΛΑΤΕΣ'],find:['DORIC','ΤΑΙΡΙΑΣΜΑ']};
-  const x=m[view]||['DORIC','ΕΥΡΕΤΗΡΙΟ'];
-  document.getElementById('hT').textContent=x[0];
-  document.getElementById('hS').textContent=x[1];
+  const m={prod:'ΠΑΡΑΓΩΓΟΙ',cli:'ΠΕΛΑΤΕΣ',find:'ΤΑΙΡΙΑΣΜΑ'};
+  document.getElementById('hT').textContent='DORIC';
+  document.getElementById('hS').textContent=m[view]||'ΕΥΡΕΤΗΡΙΟ';
 }
 
-/* ================= ΠΑΡΑΓΩΓΟΙ ================= */
-function prodList(){
+/* ================= ΠΑΡΑΓΩΓΟΙ: περιοχές ================= */
+function prodRegions(){
   let h='<div class="wrap">';
   if(!D.pRegions.length){
     h+=`<div class="empty"><div class="big">🗺️</div>
       <p>Ξεκίνα φτιάχνοντας τις περιοχές σου — π.χ. Μολάοι, Σκάλα, Γύθειο.<br>
-      Μετά βάζεις παραγωγούς μέσα σε κάθε περιοχή.</p></div>`;
-    h+=`<button class="btn" onclick="addRegion('p')">+ Νέα περιοχή</button></div>`;
+      Μετά μπαίνεις σε κάθε περιοχή και βάζεις τους παραγωγούς της.</p></div>
+      <button class="btn" onclick="addRegion('p')">+ Νέα περιοχή</button></div>`;
     return h;
   }
   D.pRegions.forEach(r=>{
     const list=D.producers.filter(p=>p.region===r.id);
-    h+=`<div class="rgn"><div class="bar"></div><h2>${esc(r.name).toUpperCase()}</h2>
-        <span class="cnt">${list.length}</span>
-        <button class="del" onclick="delRegion('p','${r.id}')">Διαγραφή</button></div>`;
-    if(!list.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Κανένας παραγωγός ακόμα</div>`;
-    list.forEach(p=>{
-      const oils=p.oils||[];
-      const tons=oils.reduce((s,o)=>s+(num(o.qty)||0),0);
-      h+=`<div class="card" onclick="openRec('producer','${p.id}')">
-        <div class="rowbtw"><div style="min-width:0">
-          <div class="name">${esc(p.name)}</div>
-          <div class="sub">${esc(p.type||'—')}${p.contact?' · '+esc(p.contact):''}</div>
-          <div class="chips">
-            <span class="chip">${oils.length} λάδια</span>
-            ${tons?`<span class="chip blue">${tons.toFixed(1)} τν</span>`:''}
-            ${oils.some(o=>o.bio)?'<span class="chip bio">ΒΙΟ</span>':''}
-          </div></div><div class="chev">›</div></div></div>`;
-    });
+    const oils=list.reduce((s,p)=>s+((p.oils||[]).length),0);
+    const tons=list.reduce((s,p)=>s+(p.oils||[]).reduce((t,o)=>t+(num(o.qty)||0),0),0);
+    h+=`<div class="rcard" onclick="openRec('pregion','${r.id}')">
+      <div style="flex:1;min-width:0">
+        <div class="rn">${esc(r.name)}</div>
+        <div class="rs">${list.length} παραγωγοί · ${oils} λάδια${tons?' · '+tons.toFixed(1)+' τν':''}</div>
+      </div>
+      <div class="num">${list.length}</div><div class="chev">›</div></div>`;
   });
-  h+=`<div class="btnrow" style="margin-top:20px">
-      <button class="btn" onclick="addProducer()">+ Παραγωγός</button>
-      <button class="btn ghost" onclick="addRegion('p')">+ Περιοχή</button></div></div>`;
+  h+=`<button class="btn ghost" style="margin-top:16px" onclick="addRegion('p')">+ Νέα περιοχή</button></div>`;
+  return h;
+}
+
+function pRegionPage(rid){
+  const r=D.pRegions.find(x=>x.id===rid); if(!r){go('prod');return'';}
+  const list=D.producers.filter(p=>p.region===rid);
+  let h=`<div class="wrap">
+    <div class="crumb"><button onclick="go('prod')">‹ Περιοχές</button>
+      <span class="here">${esc(r.name)}</span></div>`;
+  if(!list.length) h+=`<div class="empty"><div class="big">🫒</div>
+    <p>Καμία καταχώρηση σε αυτή την περιοχή ακόμα.</p></div>`;
+  list.forEach(p=>{
+    const oils=p.oils||[];
+    const tons=oils.reduce((s,o)=>s+(num(o.qty)||0),0);
+    h+=`<div class="card" onclick="openRec('producer','${p.id}')">
+      <div class="rowbtw"><div style="min-width:0">
+        <div class="name">${esc(p.name)}</div>
+        <div class="sub">${esc(p.type||'—')}${p.contact?' · '+esc(p.contact):''}</div>
+        <div class="chips">
+          <span class="chip">${oils.length} λάδια</span>
+          ${tons?`<span class="chip blue">${tons.toFixed(1)} τν</span>`:''}
+          ${oils.some(o=>o.bio)?'<span class="chip bio">ΒΙΟ</span>':''}
+          ${oils.some(o=>o.fileId)?'<span class="chip pdf">📄</span>':''}
+        </div></div><div class="chev">›</div></div></div>`;
+  });
+  h+=`<div class="btnrow" style="margin-top:16px">
+      <button class="btn" onclick="addProducer('${rid}')">+ Παραγωγός</button>
+      <button class="btn danger sm" onclick="delRegion('p','${rid}')">Διαγραφή περιοχής</button>
+    </div></div>`;
   return h;
 }
 
@@ -261,10 +326,11 @@ function producerPage(id){
   const p=D.producers.find(x=>x.id===id); if(!p){go('prod');return'';}
   const r=D.pRegions.find(x=>x.id===p.region);
   let h=`<div class="wrap">
-    <button class="btn ghost sm" onclick="go('prod')">‹ Πίσω</button>
-    <div class="card" style="margin-top:12px">
+    <div class="crumb"><button onclick="go('prod')">Περιοχές</button>
+      <button onclick="openRec('pregion','${p.region}')">‹ ${esc(r?r.name:'—')}</button></div>
+    <div class="card">
       <div class="name" style="font-size:20px">${esc(p.name)}</div>
-      <div class="sub">${esc(r?r.name:'—')} · ${esc(p.type||'—')}</div>
+      <div class="sub">${esc(p.type||'—')}</div>
       ${p.contact?`<div class="sub">Επαφή: ${esc(p.contact)}</div>`:''}
       ${p.phone?`<div class="sub"><a href="tel:${esc(p.phone)}" style="color:var(--navy);font-weight:700">${esc(p.phone)}</a></div>`:''}
       ${p.notes?`<div class="sub" style="margin-top:8px;color:var(--ink)">${esc(p.notes)}</div>`:''}
@@ -275,7 +341,7 @@ function producerPage(id){
     </div>
     <div class="sect">ΔΙΑΘΕΣΙΜΑ ΛΑΔΙΑ</div>`;
   const oils=p.oils||[];
-  if(!oils.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Δεν έχεις καταχωρήσει λάδια. Πάτα «+ Λάδι» για το πρώτο.</div>`;
+  if(!oils.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Δεν έχεις καταχωρήσει λάδια. Πάτα «+ Λάδι».</div>`;
   oils.forEach(o=>{ h+=oilCard(p.id,o); });
   h+=`<button class="btn olive" style="margin-top:14px" onclick="addOil('${p.id}')">+ Λάδι</button></div>`;
   return h;
@@ -297,10 +363,11 @@ function oilCard(pid,o){
       <div class="mini"><div class="k">K270</div><div class="v ${k270Cls(o.k270)}">${o.k270?esc(o.k270):'—'}</div></div>
       <div class="mini"><div class="k">ΠΟΛΥΦΑΙΝΟΛΕΣ</div><div class="v ${polyCls(o.poly)}">${o.poly?esc(o.poly):'—'}</div></div>
     </div>
-    ${(o.bio||o.lab||o.adate)?`<div class="chips">
+    ${(o.bio||o.lab||o.adate||o.fileId)?`<div class="chips">
       ${o.bio?'<span class="chip bio">ΒΙΟ</span>':''}
       ${o.lab?`<span class="chip blue">${esc(o.lab)}</span>`:''}
       ${o.adate?`<span class="chip">Ανάλυση ${esc(o.adate)}</span>`:''}
+      ${o.fileId?`<span class="chip pdf" onclick="showFile('${o.fileId}','${esc(o.fileName||'analysis.pdf')}')">📄 ${esc(o.fileName||'Ανάλυση')}</span>`:''}
     </div>`:''}
     ${o.notes?`<div class="sub" style="margin-top:8px;color:var(--ink)">${esc(o.notes)}</div>`:''}
     <div class="btnrow">
@@ -310,37 +377,50 @@ function oilCard(pid,o){
 }
 
 /* ================= ΠΕΛΑΤΕΣ ================= */
-function cliList(){
+function cliRegions(){
   let h='<div class="wrap">';
   if(!D.cRegions.length){
     h+=`<div class="empty"><div class="big">🌍</div>
-      <p>Φτιάξε περιοχές πελατών — π.χ. Puglia, Γερμανία, Κύπρος.<br>
-      Μετά βάζεις πελάτες μέσα σε κάθε περιοχή.</p></div>
+      <p>Φτιάξε περιοχές πελατών — π.χ. Puglia, Γερμανία, Κύπρος.</p></div>
       <button class="btn" onclick="addRegion('c')">+ Νέα περιοχή</button></div>`;
     return h;
   }
   D.cRegions.forEach(r=>{
     const list=D.clients.filter(c=>c.region===r.id);
-    h+=`<div class="rgn"><div class="bar"></div><h2>${esc(r.name).toUpperCase()}</h2>
-        <span class="cnt">${list.length}</span>
-        <button class="del" onclick="delRegion('c','${r.id}')">Διαγραφή</button></div>`;
-    if(!list.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Κανένας πελάτης ακόμα</div>`;
-    list.forEach(c=>{
-      const deals=(c.deals||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-      const last=deals[0];
-      h+=`<div class="card" onclick="openRec('client','${c.id}')">
-        <div class="rowbtw"><div style="min-width:0">
-          <div class="name">${esc(c.name)}</div>
-          <div class="sub">${esc(c.city||'')}${c.contact?' · '+esc(c.contact):''}</div>
-          <div class="chips">
-            ${last?`<span class="chip blue">Τελευταία: ${esc(last.date||'—')}</span>`:'<span class="chip">Καμία πράξη</span>'}
-            ${last&&last.qty?`<span class="chip">${esc(last.qty)} τν</span>`:''}
-          </div></div><div class="chev">›</div></div></div>`;
-    });
+    const deals=list.reduce((s,c)=>s+((c.deals||[]).length),0);
+    h+=`<div class="rcard" onclick="openRec('cregion','${r.id}')">
+      <div style="flex:1;min-width:0">
+        <div class="rn">${esc(r.name)}</div>
+        <div class="rs">${list.length} πελάτες · ${deals} πράξεις</div>
+      </div><div class="num">${list.length}</div><div class="chev">›</div></div>`;
   });
-  h+=`<div class="btnrow" style="margin-top:20px">
-      <button class="btn" onclick="addClient()">+ Πελάτης</button>
-      <button class="btn ghost" onclick="addRegion('c')">+ Περιοχή</button></div></div>`;
+  h+=`<button class="btn ghost" style="margin-top:16px" onclick="addRegion('c')">+ Νέα περιοχή</button></div>`;
+  return h;
+}
+
+function cRegionPage(rid){
+  const r=D.cRegions.find(x=>x.id===rid); if(!r){go('cli');return'';}
+  const list=D.clients.filter(c=>c.region===rid);
+  let h=`<div class="wrap">
+    <div class="crumb"><button onclick="go('cli')">‹ Περιοχές</button>
+      <span class="here">${esc(r.name)}</span></div>`;
+  if(!list.length) h+=`<div class="empty"><div class="big">🤝</div><p>Κανένας πελάτης εδώ ακόμα.</p></div>`;
+  list.forEach(c=>{
+    const deals=(c.deals||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    const last=deals[0];
+    h+=`<div class="card" onclick="openRec('client','${c.id}')">
+      <div class="rowbtw"><div style="min-width:0">
+        <div class="name">${esc(c.name)}</div>
+        <div class="sub">${esc(c.city||'')}${c.contact?' · '+esc(c.contact):''}</div>
+        <div class="chips">
+          ${last?`<span class="chip blue">Τελευταία: ${esc(last.date||'—')}</span>`:'<span class="chip">Καμία πράξη</span>'}
+          ${last&&last.qty?`<span class="chip">${esc(last.qty)} τν</span>`:''}
+        </div></div><div class="chev">›</div></div></div>`;
+  });
+  h+=`<div class="btnrow" style="margin-top:16px">
+      <button class="btn" onclick="addClient('${rid}')">+ Πελάτης</button>
+      <button class="btn danger sm" onclick="delRegion('c','${rid}')">Διαγραφή περιοχής</button>
+    </div></div>`;
   return h;
 }
 
@@ -348,10 +428,11 @@ function clientPage(id){
   const c=D.clients.find(x=>x.id===id); if(!c){go('cli');return'';}
   const r=D.cRegions.find(x=>x.id===c.region);
   let h=`<div class="wrap">
-    <button class="btn ghost sm" onclick="go('cli')">‹ Πίσω</button>
-    <div class="card" style="margin-top:12px">
+    <div class="crumb"><button onclick="go('cli')">Περιοχές</button>
+      <button onclick="openRec('cregion','${c.region}')">‹ ${esc(r?r.name:'—')}</button></div>
+    <div class="card">
       <div class="name" style="font-size:20px">${esc(c.name)}</div>
-      <div class="sub">${esc(r?r.name:'—')}${c.city?' · '+esc(c.city):''}</div>
+      <div class="sub">${esc(c.city||'')}</div>
       ${c.contact?`<div class="sub">Επαφή: ${esc(c.contact)}</div>`:''}
       ${c.phone?`<div class="sub"><a href="tel:${esc(c.phone)}" style="color:var(--navy);font-weight:700">${esc(c.phone)}</a></div>`:''}
       ${c.email?`<div class="sub"><a href="mailto:${esc(c.email)}" style="color:var(--navy)">${esc(c.email)}</a></div>`:''}
@@ -360,8 +441,7 @@ function clientPage(id){
       <div class="btnrow">
         <button class="btn ghost sm" onclick="editClient('${c.id}')">Επεξεργασία</button>
         <button class="btn danger sm" onclick="delClient('${c.id}')">Διαγραφή</button>
-      </div>
-    </div>
+      </div></div>
     <div class="sect">ΙΣΤΟΡΙΚΟ ΠΡΑΞΕΩΝ</div>`;
   const deals=(c.deals||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   if(!deals.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Καμία πράξη ακόμα.</div>`;
@@ -381,8 +461,10 @@ function dealCard(cid,d,isLast){
       <div style="font-weight:800;font-size:17px">${d.qty?esc(d.qty)+' τν':'—'}</div>
       ${d.price?`<div class="sub">${esc(d.price)} €/κιλό</div>`:''}
     </div></div>
-    ${sup?`<div class="chips"><span class="chip">Προμηθευτής: ${esc(sup.name)}</span></div>`:
-        (d.supplierText?`<div class="chips"><span class="chip">Προμηθευτής: ${esc(d.supplierText)}</span></div>`:'')}
+    ${(sup||d.supplierText||d.fileId)?`<div class="chips">
+      ${sup?`<span class="chip">Προμηθευτής: ${esc(sup.name)}</span>`:(d.supplierText?`<span class="chip">Προμηθευτής: ${esc(d.supplierText)}</span>`:'')}
+      ${d.fileId?`<span class="chip pdf" onclick="showFile('${d.fileId}','${esc(d.fileName||'analysis.pdf')}')">📄 ${esc(d.fileName||'Ανάλυση')}</span>`:''}
+    </div>`:''}
     ${(d.acid||d.perox||d.k270||d.poly)?`<div class="grid4">
       <div class="mini"><div class="k">ΟΞΥΤΗΤΑ</div><div class="v ${acidCls(d.acid)}">${d.acid?esc(d.acid):'—'}</div></div>
       <div class="mini"><div class="k">ΥΠΕΡΟΞΕΙΔΙΑ</div><div class="v ${peroxCls(d.perox)}">${d.perox?esc(d.perox):'—'}</div></div>
@@ -397,37 +479,88 @@ function dealCard(cid,d,isLast){
 }
 
 /* ================= ΤΑΙΡΙΑΣΜΑ ================= */
-let F={acid:'',poly:'',qty:'',bio:false};
+let F={acid:'',perox:'',k270:'',poly:'',qty:'',price:'',cat:'',variety:'',harvest:'',region:'',bio:false,pdf:false,more:false};
 function findPage(){
-  const all=[];
-  D.producers.forEach(p=>(p.oils||[]).forEach(o=>all.push({p,o})));
-  let res=all.filter(({o})=>{
-    const a=num(F.acid), po=num(F.poly), q=num(F.qty);
-    if(a!==null && (num(o.acid)===null || num(o.acid)>a)) return false;
-    if(po!==null && (num(o.poly)===null || num(o.poly)<po)) return false;
-    if(q!==null && (num(o.qty)===null || num(o.qty)<q)) return false;
-    if(F.bio && !o.bio) return false;
-    return true;
-  });
-  res.sort((x,y)=>(num(x.o.acid)??9)-(num(y.o.acid)??9));
-
-  let h=`<div class="wrap">
-    <div class="card">
+  const ro=D.pRegions.map(r=>`<option value="${r.id}" ${F.region===r.id?'selected':''}>${esc(r.name)}</option>`).join('');
+  return `<div class="wrap">
+    <div class="filt">
       <div style="font-weight:700;margin-bottom:4px">Τι ζητάει ο αγοραστής;</div>
       <div class="hint" style="margin-bottom:12px">Άφησε κενό ό,τι δεν σε ενδιαφέρει.</div>
       <div class="f2">
         <div class="f"><label>ΟΞΥΤΗΤΑ ΕΩΣ</label>
-          <input inputmode="decimal" value="${esc(F.acid)}" oninput="F.acid=this.value;render()" placeholder="0,40"></div>
-        <div class="f"><label>ΠΟΛΥΦΑΙΝΟΛΕΣ ΑΠΟ</label>
-          <input inputmode="decimal" value="${esc(F.poly)}" oninput="F.poly=this.value;render()" placeholder="250"></div>
+          <input inputmode="decimal" value="${esc(F.acid)}" oninput="F.acid=this.value;fillFind()" placeholder="0,40"></div>
+        <div class="f"><label>ΥΠΕΡΟΞΕΙΔΙΑ ΕΩΣ</label>
+          <input inputmode="decimal" value="${esc(F.perox)}" oninput="F.perox=this.value;fillFind()" placeholder="12"></div>
       </div>
-      <div class="f"><label>ΕΛΑΧΙΣΤΗ ΠΟΣΟΤΗΤΑ (ΤΝ)</label>
-        <input inputmode="decimal" value="${esc(F.qty)}" oninput="F.qty=this.value;render()" placeholder="22"></div>
-      <div class="chkrow"><input type="checkbox" ${F.bio?'checked':''} onchange="F.bio=this.checked;render()"><span>Μόνο βιολογικό</span></div>
+      <div class="f2">
+        <div class="f"><label>K270 ΕΩΣ</label>
+          <input inputmode="decimal" value="${esc(F.k270)}" oninput="F.k270=this.value;fillFind()" placeholder="0,18"></div>
+        <div class="f"><label>ΠΟΛΥΦΑΙΝΟΛΕΣ ΑΠΟ</label>
+          <input inputmode="decimal" value="${esc(F.poly)}" oninput="F.poly=this.value;fillFind()" placeholder="250"></div>
+      </div>
+      <div class="f2">
+        <div class="f"><label>ΠΟΣΟΤΗΤΑ ΑΠΟ (ΤΝ)</label>
+          <input inputmode="decimal" value="${esc(F.qty)}" oninput="F.qty=this.value;fillFind()" placeholder="22"></div>
+        <div class="f"><label>ΤΙΜΗ ΕΩΣ (€/ΚΙΛΟ)</label>
+          <input inputmode="decimal" value="${esc(F.price)}" oninput="F.price=this.value;fillFind()" placeholder="4,20"></div>
+      </div>
+      <div id="more" style="display:${F.more?'block':'none'}">
+        <div class="f2">
+          <div class="f"><label>ΚΑΤΗΓΟΡΙΑ</label>
+            <select onchange="F.cat=this.value;fillFind()">
+              <option value="">Όλες</option>
+              ${['Έξτρα παρθένο','Παρθένο','Λαμπάντε'].map(t=>`<option ${F.cat===t?'selected':''}>${t}</option>`).join('')}
+            </select></div>
+          <div class="f"><label>ΣΥΓΚΟΜΙΔΗ</label>
+            <select onchange="F.harvest=this.value;fillFind()">
+              <option value="">Όλες</option>
+              ${['Πρώιμη','Όψιμη'].map(t=>`<option ${F.harvest===t?'selected':''}>${t}</option>`).join('')}
+            </select></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label>ΠΟΙΚΙΛΙΑ</label>
+            <input value="${esc(F.variety)}" oninput="F.variety=this.value;fillFind()" placeholder="Κορωνέικη"></div>
+          <div class="f"><label>ΠΕΡΙΟΧΗ</label>
+            <select onchange="F.region=this.value;fillFind()">
+              <option value="">Όλες</option>${ro}
+            </select></div>
+        </div>
+      </div>
+      <button class="more" onclick="F.more=!F.more;render()">${F.more?'▴ Λιγότερα φίλτρα':'▾ Περισσότερα φίλτρα'}</button>
+      <div class="chkrow"><input type="checkbox" ${F.bio?'checked':''} onchange="F.bio=this.checked;fillFind()"><span>Μόνο βιολογικό</span></div>
+      <div class="chkrow" style="padding-top:0"><input type="checkbox" ${F.pdf?'checked':''} onchange="F.pdf=this.checked;fillFind()"><span>Μόνο με ανάλυση σε αρχείο</span></div>
+      <button class="btn ghost sm" style="margin-top:6px" onclick="clearF()">Καθαρισμός φίλτρων</button>
     </div>
-    <div class="sect">ΒΡΕΘΗΚΑΝ ${res.length}</div>`;
-  if(!all.length) h+=`<div class="empty"><div class="big">🫗</div><p>Δεν υπάρχουν ακόμα λάδια καταχωρημένα.<br>Πρόσθεσε παραγωγούς και τις παρτίδες τους.</p></div>`;
-  else if(!res.length) h+=`<div class="card" style="color:var(--muted);font-size:14px">Καμία παρτίδα δεν πληροί τα κριτήρια. Χαλάρωσε κάποιο φίλτρο.</div>`;
+    <div id="res"></div></div>`;
+}
+function clearF(){ F={acid:'',perox:'',k270:'',poly:'',qty:'',price:'',cat:'',variety:'',harvest:'',region:'',bio:false,pdf:false,more:F.more}; render(); }
+function fillFind(){ const el=document.getElementById('res'); if(el) el.innerHTML=findResults(); }
+
+function findResults(){
+  const all=[];
+  D.producers.forEach(p=>(p.oils||[]).forEach(o=>all.push({p,o})));
+  const res=all.filter(({p,o})=>{
+    const a=num(F.acid), pe=num(F.perox), k=num(F.k270), po=num(F.poly), q=num(F.qty), pr=num(F.price);
+    if(a!==null  && (num(o.acid)===null  || num(o.acid)>a))   return false;
+    if(pe!==null && (num(o.perox)===null || num(o.perox)>pe)) return false;
+    if(k!==null  && (num(o.k270)===null  || num(o.k270)>k))   return false;
+    if(po!==null && (num(o.poly)===null  || num(o.poly)<po))  return false;
+    if(q!==null  && (num(o.qty)===null   || num(o.qty)<q))    return false;
+    if(pr!==null && (num(o.price)===null || num(o.price)>pr)) return false;
+    if(F.cat && o.cat!==F.cat) return false;
+    if(F.harvest && o.harvest!==F.harvest) return false;
+    if(F.variety && !(o.variety||'').toLowerCase().includes(F.variety.toLowerCase())) return false;
+    if(F.region && p.region!==F.region) return false;
+    if(F.bio && !o.bio) return false;
+    if(F.pdf && !o.fileId) return false;
+    return true;
+  });
+  res.sort((x,y)=>(num(x.o.acid)??9)-(num(y.o.acid)??9));
+
+  const tot=res.reduce((s,{o})=>s+(num(o.qty)||0),0);
+  let h=`<div class="sect">ΒΡΕΘΗΚΑΝ ${res.length}${tot?' · '+tot.toFixed(1)+' ΤΝ ΣΥΝΟΛΟ':''}</div>`;
+  if(!all.length) return h+`<div class="empty"><div class="big">🫗</div><p>Δεν υπάρχουν ακόμα λάδια καταχωρημένα.</p></div>`;
+  if(!res.length) return h+`<div class="card" style="color:var(--muted);font-size:14px">Καμία παρτίδα δεν πληροί τα κριτήρια. Χαλάρωσε κάποιο φίλτρο.</div>`;
   res.forEach(({p,o})=>{
     const r=D.pRegions.find(x=>x.id===p.region);
     h+=`<div class="card" onclick="openRec('producer','${p.id}')">
@@ -436,12 +569,16 @@ function findPage(){
         <div class="sub">${esc(p.name)} · ${esc(r?r.name:'—')}</div>
         <div class="chips">
           <span class="chip blue">οξ. ${o.acid?esc(o.acid):'—'}</span>
-          <span class="chip">${o.qty?esc(o.qty)+' τν':'—'}</span>
+          ${o.perox?`<span class="chip">υπ. ${esc(o.perox)}</span>`:''}
+          ${o.k270?`<span class="chip">K270 ${esc(o.k270)}</span>`:''}
           ${o.poly?`<span class="chip">${esc(o.poly)} mg/kg</span>`:''}
+          <span class="chip">${o.qty?esc(o.qty)+' τν':'—'}</span>
+          ${o.price?`<span class="chip">${esc(o.price)} €</span>`:''}
           ${o.bio?'<span class="chip bio">ΒΙΟ</span>':''}
+          ${o.fileId?'<span class="chip pdf">📄</span>':''}
         </div></div><div class="chev">›</div></div></div>`;
   });
-  return h+'</div>';
+  return h;
 }
 
 /* ================= ΦΟΡΜΕΣ ================= */
@@ -453,7 +590,13 @@ function sheet(title,body,onSave){
     <h3>${esc(title)}</h3>${body}</div>`;
   w.addEventListener('click',e=>{ if(e.target===w) w.remove(); });
   document.body.appendChild(w);
-  w.querySelector('#sv').onclick=()=>{ if(onSave(w)!==false){ w.remove(); render(); } };
+  w.querySelector('#sv').onclick=async()=>{
+    const btn=w.querySelector('#sv'); btn.textContent='…';
+    let r; try{ r=await onSave(w); }catch(e){ r=false; toast('Κάτι πήγε στραβά'); }
+    btn.textContent='Αποθήκευση';
+    if(r===false) return;
+    w.remove(); render();
+  };
   return w;
 }
 const val=(w,n)=>{const e=w.querySelector('[name="'+n+'"]');return e?(e.type==='checkbox'?e.checked:e.value.trim()):'';};
@@ -472,6 +615,25 @@ function sel(label,name,v,opts){
 function chk(label,name,v){
   return `<div class="chkrow"><input type="checkbox" name="${name}" ${v?'checked':''}><span>${label}</span></div>`;
 }
+function fileFld(cur){
+  return `<div class="f"><label>ΑΡΧΕΙΟ ΑΝΑΛΥΣΗΣ (PDF Ή ΦΩΤΟ)</label>
+    <input type="file" name="file" accept="application/pdf,image/*">
+    ${cur?`<div class="hint">Υπάρχει ήδη: <b>${esc(cur)}</b>. Διάλεξε νέο για αντικατάσταση.</div>`:
+          `<div class="hint">Προαιρετικό. Αποθηκεύεται μέσα στη συσκευή.</div>`}
+    ${cur?`<div class="chkrow"><input type="checkbox" name="delfile"><span>Αφαίρεση αρχείου</span></div>`:''}
+  </div>`;
+}
+async function handleFile(w,rec){
+  const inp=w.querySelector('[name="file"]');
+  const f=inp&&inp.files&&inp.files[0];
+  if(val(w,'delfile')){ await dropFile(rec.fileId); rec.fileId=null; rec.fileName=null; return; }
+  if(!f) return;
+  if(!filesOK){ toast('Η συσκευή δεν υποστηρίζει αποθήκευση αρχείων'); return; }
+  if(f.size>8*1024*1024){ toast('Πολύ μεγάλο αρχείο (πάνω από 8MB)'); return; }
+  const id=rec.fileId||uid();
+  await putFile(id,{name:f.name,type:f.type,blob:f});
+  rec.fileId=id; rec.fileName=f.name;
+}
 
 /* --- περιοχές --- */
 function addRegion(kind){
@@ -486,7 +648,7 @@ function delRegion(kind,id){
   ask('Διαγραφή περιοχής;',()=>{
     if(kind==='p') D.pRegions=D.pRegions.filter(r=>r.id!==id);
     else D.cRegions=D.cRegions.filter(r=>r.id!==id);
-    save('Διαγράφηκε'); render();
+    save('Διαγράφηκε'); go(kind==='p'?'prod':'cli');
   });
 }
 
@@ -501,14 +663,16 @@ function producerForm(p){
     +fld('ΤΗΛΕΦΩΝΟ','phone',p&&p.phone,'')
     +area('ΣΗΜΕΙΩΣΕΙΣ','notes',p&&p.notes,'δεξαμενές INOX; άζωτο; δέχεται δειγματοληψία; εντυπώσεις');
 }
-function addProducer(){
+function addProducer(rid){
   if(!D.pRegions.length) return toast('Φτιάξε πρώτα μια περιοχή');
-  sheet('Νέος παραγωγός',producerForm(null),w=>{
+  const w=sheet('Νέος παραγωγός',producerForm(rid?{region:rid}:null),w=>{
     const n=val(w,'name'); if(!n){toast('Γράψε όνομα');return false;}
-    D.producers.push({id:uid(),region:val(w,'region'),name:n,type:val(w,'type'),
+    const id=uid();
+    D.producers.push({id,region:val(w,'region'),name:n,type:val(w,'type'),
       contact:val(w,'contact'),phone:val(w,'phone'),notes:val(w,'notes'),oils:[]});
     save('Ο παραγωγός προστέθηκε');
   });
+  return w;
 }
 function editProducer(id){
   const p=D.producers.find(x=>x.id===id);
@@ -520,8 +684,12 @@ function editProducer(id){
   });
 }
 function delProducer(id){
-  ask('Διαγραφή παραγωγού και όλων των λαδιών του;',()=>{
-    D.producers=D.producers.filter(p=>p.id!==id); save('Διαγράφηκε'); go('prod');
+  ask('Διαγραφή παραγωγού και όλων των λαδιών του;',async()=>{
+    const p=D.producers.find(x=>x.id===id);
+    if(p) for(const o of (p.oils||[])) await dropFile(o.fileId);
+    const rid=p?p.region:null;
+    D.producers=D.producers.filter(x=>x.id!==id); save('Διαγράφηκε');
+    if(rid) openRec('pregion',rid); else go('prod');
   });
 }
 
@@ -551,9 +719,10 @@ function oilForm(o){
       ${fld('ΕΡΓΑΣΤΗΡΙΟ','lab',o&&o.lab,'')}
       ${fld('ΗΜ/ΝΙΑ ΑΝΑΛΥΣΗΣ','adate',o&&o.adate,'','date')}
     </div>`
+    +fileFld(o&&o.fileName)
     +fld('ΤΙΜΗ (€/ΚΙΛΟ)','price',o&&o.price,'4,10','num')
     +chk('Βιολογικό','bio',o&&o.bio)
-    +area('ΣΗΜΕΙΩΣΕΙΣ ΑΝΑΛΥΣΗΣ','notes',o&&o.notes,'πλήρη στοιχεία ανάλυσης, γευστικές νότες, πού φυλάσσεται το χαρτί');
+    +area('ΣΗΜΕΙΩΣΕΙΣ','notes',o&&o.notes,'γευστικές νότες, πού φυλάσσεται το χαρτί, όροι');
 }
 function oilFrom(w){
   return {name:val(w,'name'),variety:val(w,'variety'),cat:val(w,'cat'),harvest:val(w,'harvest'),
@@ -562,22 +731,24 @@ function oilFrom(w){
 }
 function addOil(pid){
   const p=D.producers.find(x=>x.id===pid);
-  sheet('Νέο λάδι',oilForm(null),w=>{
+  sheet('Νέο λάδι',oilForm(null),async w=>{
     const o=oilFrom(w); if(!o.name){toast('Γράψε όνομα παρτίδας');return false;}
-    o.id=uid(); p.oils=p.oils||[]; p.oils.push(o); save('Το λάδι προστέθηκε');
+    o.id=uid(); await handleFile(w,o);
+    p.oils=p.oils||[]; p.oils.push(o); save('Το λάδι προστέθηκε');
   });
 }
 function editOil(pid,oid){
   const p=D.producers.find(x=>x.id===pid); const o=p.oils.find(x=>x.id===oid);
-  sheet('Επεξεργασία λαδιού',oilForm(o),w=>{
+  sheet('Επεξεργασία λαδιού',oilForm(o),async w=>{
     const n=oilFrom(w); if(!n.name){toast('Γράψε όνομα παρτίδας');return false;}
-    Object.assign(o,n); save('Αποθηκεύτηκε');
+    Object.assign(o,n); await handleFile(w,o); save('Αποθηκεύτηκε');
   });
 }
 function delOil(pid,oid){
-  ask('Διαγραφή λαδιού;',()=>{
-    const p=D.producers.find(x=>x.id===pid); p.oils=p.oils.filter(o=>o.id!==oid);
-    save('Διαγράφηκε'); render();
+  ask('Διαγραφή λαδιού;',async()=>{
+    const p=D.producers.find(x=>x.id===pid);
+    const o=p.oils.find(x=>x.id===oid); await dropFile(o&&o.fileId);
+    p.oils=p.oils.filter(x=>x.id!==oid); save('Διαγράφηκε'); render();
   });
 }
 
@@ -592,9 +763,9 @@ function clientForm(c){
     +area('ΤΙ ΨΑΧΝΕΙ','wants',c&&c.wants,'π.χ. απαλό προφίλ, οξύτητα έως 0,4, 40-60 τν/έτος')
     +area('ΣΗΜΕΙΩΣΕΙΣ','notes',c&&c.notes,'όροι πληρωμής, ιστορικό, εντυπώσεις');
 }
-function addClient(){
+function addClient(rid){
   if(!D.cRegions.length) return toast('Φτιάξε πρώτα μια περιοχή');
-  sheet('Νέος πελάτης',clientForm(null),w=>{
+  sheet('Νέος πελάτης',clientForm(rid?{region:rid}:null),w=>{
     const n=val(w,'name'); if(!n){toast('Γράψε επωνυμία');return false;}
     D.clients.push({id:uid(),region:val(w,'region'),name:n,city:val(w,'city'),
       contact:val(w,'contact'),phone:val(w,'phone'),email:val(w,'email'),
@@ -612,8 +783,12 @@ function editClient(id){
   });
 }
 function delClient(id){
-  ask('Διαγραφή πελάτη και όλου του ιστορικού;',()=>{
-    D.clients=D.clients.filter(c=>c.id!==id); save('Διαγράφηκε'); go('cli');
+  ask('Διαγραφή πελάτη και όλου του ιστορικού;',async()=>{
+    const c=D.clients.find(x=>x.id===id);
+    if(c) for(const d of (c.deals||[])) await dropFile(d.fileId);
+    const rid=c?c.region:null;
+    D.clients=D.clients.filter(x=>x.id!==id); save('Διαγράφηκε');
+    if(rid) openRec('cregion',rid); else go('cli');
   });
 }
 
@@ -622,8 +797,7 @@ function dealForm(d){
   const sup=[{v:'',t:'— επίλεξε —'}].concat(D.producers.map(p=>({v:p.id,t:p.name})));
   return `<div class="f2">
       ${fld('ΗΜΕΡΟΜΗΝΙΑ','date',d&&d.date,'','date')}
-      ${sel('ΕΙΔΟΣ','kind',d?d.kind:'Πώληση',
-        ['Πώληση','Δείγμα','Προσφορά'].map(t=>({v:t,t})))}
+      ${sel('ΕΙΔΟΣ','kind',d?d.kind:'Πώληση',['Πώληση','Δείγμα','Προσφορά'].map(t=>({v:t,t})))}
     </div>`
     +fld('ΠΡΟΪΟΝ / ΠΑΡΤΙΔΑ','product',d&&d.product,'π.χ. EVOO Κορωνέικη Νοε 2026')
     +`<div class="f2">${fld('ΠΟΣΟΤΗΤΑ (ΤΝ)','qty',d&&d.qty,'22','num')}${fld('ΤΙΜΗ (€/ΚΙΛΟ)','price',d&&d.price,'4,65','num')}</div>`
@@ -638,6 +812,7 @@ function dealForm(d){
       ${fld('K270','k270',d&&d.k270,'0,15','num')}
       ${fld('ΠΟΛΥΦΑΙΝΟΛΕΣ','poly',d&&d.poly,'420','num')}
     </div>`
+    +fileFld(d&&d.fileName)
     +area('ΣΗΜΕΙΩΣΕΙΣ','notes',d&&d.notes,'όροι, Incoterm, μεταφορέας, τι είπε ο πελάτης');
 }
 function dealFrom(w){
@@ -647,25 +822,32 @@ function dealFrom(w){
 }
 function addDeal(cid){
   const c=D.clients.find(x=>x.id===cid);
-  sheet('Νέα πράξη',dealForm({date:new Date().toISOString().slice(0,10)}),w=>{
+  sheet('Νέα πράξη',dealForm({date:new Date().toISOString().slice(0,10)}),async w=>{
     const d=dealFrom(w); if(!d.date){toast('Βάλε ημερομηνία');return false;}
-    d.id=uid(); c.deals=c.deals||[]; c.deals.push(d); save('Η πράξη καταχωρήθηκε');
+    d.id=uid(); await handleFile(w,d);
+    c.deals=c.deals||[]; c.deals.push(d); save('Η πράξη καταχωρήθηκε');
   });
 }
 function editDeal(cid,did){
   const c=D.clients.find(x=>x.id===cid); const d=c.deals.find(x=>x.id===did);
-  sheet('Επεξεργασία πράξης',dealForm(d),w=>{ Object.assign(d,dealFrom(w)); save('Αποθηκεύτηκε'); });
+  sheet('Επεξεργασία πράξης',dealForm(d),async w=>{
+    Object.assign(d,dealFrom(w)); await handleFile(w,d); save('Αποθηκεύτηκε');
+  });
 }
 function delDeal(cid,did){
-  ask('Διαγραφή πράξης;',()=>{
-    const c=D.clients.find(x=>x.id===cid); c.deals=c.deals.filter(x=>x.id!==did);
-    save('Διαγράφηκε'); render();
+  ask('Διαγραφή πράξης;',async()=>{
+    const c=D.clients.find(x=>x.id===cid);
+    const d=c.deals.find(x=>x.id===did); await dropFile(d&&d.fileId);
+    c.deals=c.deals.filter(x=>x.id!==did); save('Διαγράφηκε'); render();
   });
 }
 
 /* --- αντίγραφο ασφαλείας --- */
 function openBackup(){
-  const stats=`${D.producers.length} παραγωγοί · ${D.producers.reduce((s,p)=>s+((p.oils||[]).length),0)} λάδια · ${D.clients.length} πελάτες`;
+  const oils=D.producers.reduce((s,p)=>s+((p.oils||[]).length),0);
+  const files=D.producers.reduce((s,p)=>s+(p.oils||[]).filter(o=>o.fileId).length,0)
+             +D.clients.reduce((s,c)=>s+(c.deals||[]).filter(d=>d.fileId).length,0);
+  const stats=`${D.producers.length} παραγωγοί · ${oils} λάδια · ${D.clients.length} πελάτες · ${files} αρχεία`;
   const w=document.createElement('div'); w.className='sheet';
   w.innerHTML=`<div class="in"><div class="sheeth">
       <button onclick="this.closest('.sheet').remove()">Κλείσιμο</button><span></span></div>
@@ -673,14 +855,11 @@ function openBackup(){
     <div class="card"><div class="sub" style="color:var(--ink)">${stats}</div>
       <div class="hint" style="margin-top:6px">Τελευταία εξαγωγή: ${esc(localStorage.getItem(KEY+'-exp')||'ποτέ')}</div></div>
     <button class="btn" id="dl" style="margin-top:12px">Κατέβασε αντίγραφο (.json)</button>
-    <div class="hint" style="margin-top:6px">Φύλαξέ το στο iCloud Drive. Κάν' το κάθε φορά που προσθέτεις πολλά.</div>
+    <div class="hint" style="margin-top:6px">Φύλαξέ το στο iCloud Drive. Τα συνημμένα PDF ΔΕΝ μπαίνουν στο αντίγραφο — κράτα τα ξεχωριστά.</div>
     <div class="sect">ΕΠΑΝΑΦΟΡΑ</div>
     <div class="f"><label>ΔΙΑΛΕΞΕ ΑΡΧΕΙΟ ΑΝΤΙΓΡΑΦΟΥ</label>
       <input type="file" id="up" accept=".json,application/json"></div>
-    <div class="hint">Η επαναφορά αντικαθιστά ό,τι υπάρχει τώρα στη συσκευή.</div>
-    <div class="sect">ΜΕΤΑΦΟΡΑ ΣΕ ΑΛΛΗ ΣΥΣΚΕΥΗ</div>
-    <div class="hint" style="margin-bottom:12px">Κατέβασε αντίγραφο εδώ, στείλ' το στην άλλη συσκευή (AirDrop ή iCloud) και κάνε επαναφορά εκεί.</div>
-    </div>`;
+    <div class="hint">Η επαναφορά αντικαθιστά ό,τι υπάρχει τώρα στη συσκευή.</div></div>`;
   w.addEventListener('click',e=>{ if(e.target===w) w.remove(); });
   document.body.appendChild(w);
   w.querySelector('#dl').onclick=()=>{
@@ -700,7 +879,7 @@ function openBackup(){
         const o=JSON.parse(r.result);
         if(!o||typeof o!=='object') throw 0;
         D=Object.assign({pRegions:[],producers:[],cRegions:[],clients:[]},o);
-        save('Τα δεδομένα επαναφέρθηκαν'); w.remove(); render();
+        save('Τα δεδομένα επαναφέρθηκαν'); w.remove(); go('prod');
       }catch(err){ toast('Το αρχείο δεν είναι έγκυρο αντίγραφο'); }
     };
     r.readAsText(f);
